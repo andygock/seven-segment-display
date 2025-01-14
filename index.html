@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Seven Segment Display Web Component</title>
+    <script type="module" src="./seven-segment.js"></script>
+    <style type="text/css">
+      body {
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Seven Segment Display</h1>
+    <p>
+      Demo of a seven-segment display <strong>web component</strong>, rendered
+      as a SVG. The shape of the segments is based on the shape used on the
+      first Casio G-SHOCK, the
+      <a
+        href="https://gshock.casio.com/intl/products/collection/origin/5000_5600/"
+        >DW-5000C</a
+      >.
+    </p>
+    <seven-segment
+      id="digit-1"
+      value="0"
+      height="300"
+      color="black"
+    ></seven-segment>
+    <seven-segment
+      id="digit-0"
+      value="0"
+      height="300"
+      color="black"
+    ></seven-segment>
+    <script>
+      // make the digits count from 00 to 99 in a loop
+      let i = 0;
+      setInterval(() => {
+        const digits = [Math.floor(i / 10), i % 10];
+        document.getElementById("digit-1").setAttribute("value", digits[0]);
+        document.getElementById("digit-0").setAttribute("value", digits[1]);
+        i = (i + 1) % 100;
+      }, 100);
+    </script>
+  </body>
+</html>
