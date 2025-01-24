@@ -25,7 +25,7 @@ const SevenSegment = ({ value, height, color }) => {
     }
   }, [value, height, color]);
 
-  return <seven-segment-casio ref={segmentRef}></seven-segment-casio>;
+  return <seven-segment ref={segmentRef}></seven-segment>;
 };
 
 export default SevenSegment;
