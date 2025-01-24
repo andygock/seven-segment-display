@@ -2,6 +2,8 @@
 
 A seven-segment display web component, rendered as a SVG.
 
+![seven-segment](https://github.com/user-attachments/assets/59658688-e9ea-4720-bfd7-2fc7b5044719)
+
 The shape of the segments is based on the shape used on the first Casio G-SHOCK, the [DW-5000C](https://gshock.casio.com/intl/products/collection/origin/5000_5600/).
 
 ## React
