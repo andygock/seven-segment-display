@@ -36,10 +36,18 @@ export default SevenSegment;
 Add the following script tag to your HTML file:
 
 ```html
-<script type="module" src="./seven-segment.js"></script>
+<script src="./seven-segment.js"></script>
 ```
 
-Then you can use the component like this:
+Or you can load it from jsDelivr CDN:
+
+```html
+<script
+  src="https://cdn.jsdelivr.net/gh/andygock/seven-segment-display@latest/seven-segment.js"
+></script>
+```
+
+Then use the `<seven-segment>` component like this:
 
 ```html
 <seven-segment
