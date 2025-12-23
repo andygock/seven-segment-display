@@ -50,11 +50,17 @@ class SevenSegmentElement extends HTMLElement {
   }
 
   connectedCallback() {
-    this.value = " "; // Default value to display
-    this.height = 260; // Default height of the display
-    this.color = "black"; // Default color of the segments
-    const shadow = this.attachShadow({ mode: "open" }); // Attach a shadow DOM
-    this.render(shadow); // Render the initial state of the component
+    // Initialize from attributes if present, otherwise use defaults
+    const attrValue = this.getAttribute("value");
+    const attrHeight = this.getAttribute("height");
+    const attrColor = this.getAttribute("color");
+
+    this.value = attrValue !== null ? attrValue : " ";
+    this.height = attrHeight !== null ? parseInt(attrHeight, 10) : 260;
+    this.color = attrColor !== null ? attrColor : "black";
+
+    const shadow = this.attachShadow({ mode: "open" });
+    this.render(shadow);
   }
 
   // Callback when an observed attribute changes
